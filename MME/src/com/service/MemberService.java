@@ -61,15 +61,21 @@ public class MemberService {
 	}
 
 	public MemberDTO login(HashMap<String, String> map) {
+		
 		SqlSession session = MySqlSessionFactory.getSession();
 		MemberDTO dto =null;
 		MemberDAO dao =new MemberDAO();
+		System.out.println("map³ª¿À³ª1"+map);
 		try {
 			dto = dao.login(session,map);
 		}finally {
 			session.close();
+			
 		}
 		return dto;
+
 	}
+
+
 
 }

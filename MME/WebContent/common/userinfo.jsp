@@ -24,7 +24,7 @@
  
  	<table class="userinfo">
  		<tr>
- 			<td>${login.username}님 어서 오세요</td>
+<%--  			<td>${login.username}님 어서 오세요</td> --%>
  			<td><a href="">로그아웃</a> </td>
  			<td><a href="">마이페이지</a></td>
  			<td><span style="font-size:30px;">회원가입</span></td>

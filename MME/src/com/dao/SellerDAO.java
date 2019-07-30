@@ -8,7 +8,7 @@ import com.dto.SellerDTO;
 public class SellerDAO {
 
 	public int sellerAdd(SqlSession session, MemberDTO mDTO, SellerDTO sDTO) {
-		int n = session.insert("SellerMapper.SellerAdd", sDTO); //에러 원인
+		int n = session.insert("SellerMapper.sellerAdd", sDTO); //에러 원인
 		if(n > 0)
 		{
 			n = session.insert("MemberMapper.memberAdd", mDTO);

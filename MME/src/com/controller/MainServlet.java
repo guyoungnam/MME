@@ -26,6 +26,7 @@ public class MainServlet extends HttpServlet {
 		RequestDispatcher dis=
 				request.getRequestDispatcher("mainpage/main.jsp");
 		dis.forward(request, response);
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

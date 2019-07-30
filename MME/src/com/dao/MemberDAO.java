@@ -26,6 +26,7 @@ public class MemberDAO {
 	public MemberDTO login(SqlSession session, HashMap<String, String> map) {
 		MemberDTO dto =
 				session.selectOne("MemberMapper.login", map);
+		System.out.println("map³ª¿À³ªDAO"+map);
 		return dto;
 	}
 	}

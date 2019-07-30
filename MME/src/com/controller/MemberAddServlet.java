@@ -93,16 +93,12 @@ public class MemberAddServlet extends HttpServlet {
 	            String seller_address1 = request.getParameter("seller_address1");
 	            String seller_address2 = request.getParameter("seller_address2");
 	            String seller_product_type = request.getParameter("seller_product_type");
-	    
-	            
-	            
-	            
-	            
+
 	            
 	            SellerDTO sDTO = new SellerDTO(seller_num, 
 	            		seller_name, 
 	            		seller_post, 
-	            		seller_address1, 
+	            		seller_address1, //¿¡·¯?
 	            		seller_address2, 
 	            		seller_product_type
 	            		);

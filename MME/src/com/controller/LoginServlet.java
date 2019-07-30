@@ -14,31 +14,33 @@ import javax.servlet.http.HttpSession;
 import com.dto.MemberDTO;
 import com.service.MemberService;
 
-/**
- * Servlet implementation class MainServlet
- */
+
 @WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String userid = request.getParameter("userid");
-		String passwd = request.getParameter("passwd");
+		String user_id = request.getParameter("user_id");
+		String user_pw = request.getParameter("user_pw");
 		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("userid",userid );
-		map.put("passwd", passwd);
+		map.put("user_id",user_id );
+		map.put("user_pw",user_pw);
+		
+		System.out.println("테스트: 넘어오나?");
+	
 		
 		MemberService service = new MemberService();
 		MemberDTO dto = service.login(map);
 		
 		
+		
 	String nextPage=null;	
 	if(dto == null) {
-		nextPage= "LoginUIServlet";
+		nextPage= "LoginUI";
 		
 	}else {
-		nextPage= "MainServlet";
+		nextPage= "Main";
 		HttpSession session=request.getSession();
 		session.setAttribute("login", dto);
 	}

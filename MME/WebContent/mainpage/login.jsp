@@ -24,7 +24,6 @@
 
 </head>
 <body>
-
 <table class="mytable">
 	<tr>
 		<td style="width:678px;text-align:left;"><jsp:include page="../common/userinfo.jsp" flush="true" /></td>
@@ -32,6 +31,6 @@
 	</tr>
 </table>
 <hr>
-<!--<jsp:include page="" flush="true" />-->
+<jsp:include page="../member/loginForm.jsp" flush="true" />
 </body>
 </html>

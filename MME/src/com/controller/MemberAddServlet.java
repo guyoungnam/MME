@@ -83,14 +83,21 @@ public class MemberAddServlet extends HttpServlet {
 	        }
 	        else
 	        {
-	        	SellerService sService = new SellerService();
 	        	
+	
+	        	SellerService sService = new SellerService();
+
 	        	String seller_num = request.getParameter("seller_num");
-	            String seller_name = request.getParameter("seller_name");
+	        	String seller_name = request.getParameter("seller_name");
 	            String seller_post = request.getParameter("seller_post");
 	            String seller_address1 = request.getParameter("seller_address1");
 	            String seller_address2 = request.getParameter("seller_address2");
 	            String seller_product_type = request.getParameter("seller_product_type");
+	    
+	            
+	            
+	            
+	            
 	            
 	            SellerDTO sDTO = new SellerDTO(seller_num, 
 	            		seller_name, 

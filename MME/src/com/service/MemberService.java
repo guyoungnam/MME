@@ -10,14 +10,14 @@ import com.dto.MemberDTO;
 
 public class MemberService {
 
-	public int memberAdd(MemberDTO mdto) {
+	public int memberAdd(MemberDTO mDTO) {
 		
 	SqlSession session = MySqlSessionFactory.getSession();
 	int result =0;
 
 	try {
 		MemberDAO dao = new MemberDAO();
-		result=dao.memberAdd(session,mdto);
+		result=dao.memberAdd(session,mDTO);
 		session.commit();
 	}finally {
 		session.close();
@@ -65,7 +65,7 @@ public class MemberService {
 		SqlSession session = MySqlSessionFactory.getSession();
 		MemberDTO dto =null;
 		MemberDAO dao =new MemberDAO();
-		System.out.println("map나오나1"+map);
+		System.out.println("map나오나"+map);
 		try {
 			dto = dao.login(session,map);
 		}finally {
@@ -74,6 +74,39 @@ public class MemberService {
 		}
 		return dto;
 
+	}
+
+	public MemberDTO mypage(String user_id) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		MemberDTO dto =null;
+		
+		try {
+			MemberDAO dao =new MemberDAO();
+			dto = dao.mypage(session,user_id);
+		}finally {
+			session.close();
+			
+		}
+		return dto;
+		
+		
+	}
+
+	public int memberUpdate(MemberDTO mDTO) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int result =0;
+
+		try {
+			MemberDAO dao = new MemberDAO();
+			result=dao.memberUpdate(session,mDTO);
+			
+			System.out.println("********테스트service********");
+			System.out.println("mDTO 확인"+mDTO);
+			session.commit();
+		}finally {
+			session.close();
+		}
+		return result;
 	}
 
 

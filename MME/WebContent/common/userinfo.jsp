@@ -16,6 +16,7 @@
  			<td><a href="MemberUI">회원가입</a> </td>
  			<td><a href="BoardUi">게시판</a></td>
  			<td><span style="font-size:30px;">&nbsp;${title}</span></td>
+<!--  			<td><img alt="" src="images/1.png" width="200"/></td> -->
  		</tr>
  	</table>
 </c:if>  
@@ -24,10 +25,10 @@
  
  	<table class="userinfo">
  		<tr>
-<%--  			<td>${login.username}님 어서 오세요</td> --%>
- 			<td><a href="">로그아웃</a> </td>
- 			<td><a href="">마이페이지</a></td>
- 			<td><span style="font-size:30px;">회원가입</span></td>
+ 			<td> </td>
+ 			<td><a href="Logout">로그아웃</a> </td>
+ 			<td><a href="MyPageUI">마이페이지</a></td>
+ 			<td><span style="font-size:30px;">${login.user_name}</span>회원님</td>
  		</tr>
  	</table>
  	

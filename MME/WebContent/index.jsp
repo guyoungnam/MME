@@ -16,6 +16,7 @@ function login(){
 <h1>자동차 견적 비교 솔루션 MME</h1>
 
 <img alt="" src="images/b.jpg" width="500">
+
 <input type="button" value="입장하기" onclick="login()">
 </body>
 </html>

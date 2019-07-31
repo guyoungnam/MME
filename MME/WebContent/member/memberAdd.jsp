@@ -277,7 +277,7 @@ $(document).ready(function(){
 
 </head>
 <body>
-<form name="userinfoform" id="userinfoform" action="MemberAdd" method="get">
+<form name="userinfoform" id="userinfoform" action="MemberAdd" method="post">
 <table class="userjoininfo">
 	<tr>
 		<td style="text-align:right;width:180px;">아이디&nbsp;:&nbsp;&nbsp;</td><td><input type="text" name="user_id" id="user_id" value="" />&nbsp;<input type="button" id="idoverlap" value="중복체크" /></td>

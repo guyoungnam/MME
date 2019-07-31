@@ -55,6 +55,32 @@ public class SellerService {
 		return result;
 	}
 
+	public int sellerUpdate(MemberDTO mDTO, SellerDTO sDTO) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int result =0;
+		try
+		{
+			SellerDAO dao = new SellerDAO();
+			
+			result = dao.sellerUpdate(session, mDTO, sDTO); //에러 원인
+			
+			if(result > 0)
+			{
+				session.commit();
+			}
+			else
+			{
+				session.rollback();
+			}
+		}
+		finally
+		{
+			session.close();
+		}
+		
+		return result;
+	}
+
 	}
 
 

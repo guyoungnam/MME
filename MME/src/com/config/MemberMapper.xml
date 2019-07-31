@@ -97,7 +97,45 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 </select>
 
-	
+<select id="mypage" resultType="MemberDTO" parameterType="string">
+
+	SELECT 
+		user_id, 
+		user_pw, 
+		user_alias, 
+		user_name, 
+		user_mobile1, 
+		user_mobile2, 
+		user_mobile3, 
+		user_address, 
+		user_brand, 
+		seller_num, 
+		manager_code,
+		cre_dt
+	FROM USER_INFO
+	WHERE user_id = #{user_id}
+
+</select>
+
+<insert id="memberUpdate"  parameterType="MemberDTO">
+
+	update USER_INFO 
+	set user_pw=#{user_pw}, 
+		user_alias=#{user_alias}, 
+		user_name=#{user_name}, 
+		user_mobile1=#{user_mobile1}, 
+		user_mobile2=#{user_mobile2}, 
+		user_mobile3=#{user_mobile3}, 
+		user_address=#{user_address}, 
+		user_brand=#{user_brand},
+		seller_num=#{seller_num},
+		manager_code=#{manager_code}  
+		where user_id=#{user_id}
+		
+
+</insert>
+
+
 
 
 </mapper>

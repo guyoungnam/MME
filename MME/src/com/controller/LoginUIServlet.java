@@ -18,6 +18,8 @@ public class LoginUIServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		request.setAttribute("title", "·Î±×ÀÎ");
+		
 		RequestDispatcher dis=
 				request.getRequestDispatcher("mainpage/login.jsp");
 		dis.forward(request, response);

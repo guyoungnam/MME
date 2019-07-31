@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.tribes.MembershipService;
 
@@ -69,16 +70,21 @@ public class MemberAddServlet extends HttpServlet {
 	        
 	        MemberService service = new MemberService();
 		
-	        if(seller_check.equals("0")) //에러?
+	    	
+	        if(seller_check.equals("0")) //
 	        {
 	        	int checkNum = service.memberAdd(mDTO);
 	        	if(checkNum > 0)
 	        	{
-	        		request.setAttribute("alert", "메시지1 ");	
+	        		RequestDispatcher dis=
+		    				request.getRequestDispatcher("mainpage/main.jsp");
+	        		dis.forward(request, response);
+	        		request.setAttribute("mesg", "회원가입완료");
+	        		
 	        	}
 	        	else
 	        	{
-	        		request.setAttribute("alert", "메시지2 ");
+	        		request.setAttribute("alert", "메시지1");	
 	        	}
 	        }
 	        else
@@ -98,33 +104,34 @@ public class MemberAddServlet extends HttpServlet {
 	            SellerDTO sDTO = new SellerDTO(seller_num, 
 	            		seller_name, 
 	            		seller_post, 
-	            		seller_address1, //에러?
+	            		seller_address1,
 	            		seller_address2, 
 	            		seller_product_type
 	            		);
 	            
 	            mDTO.setSeller_num(seller_num);
 	            
-	            int checkNum = sService.sellerAdd(mDTO, sDTO); //에러	원인
-	            
-	            if(checkNum > 0)
-	        	{
-	        		request.setAttribute("alert", "성공 ");	
-	        	}
-	        	else
-	        	{
-	        		request.setAttribute("alert", "실패 ");
-	        	}
-	        	
-	            
-	        }
+	            int checkNum = sService.sellerAdd(mDTO, sDTO); 
+	           
+   		
 	        
-		
-	}
+	        	if(checkNum > 0) {
+	        		RequestDispatcher dis=
+		    				request.getRequestDispatcher("mainpage/main.jsp");
+	        		dis.forward(request, response);
+	        		
+	        	}else {
+	        		request.setAttribute("alert", "메시지2 ");	
+	        	
+	        }
+	        	
+	}  
+	}	
+	       
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doGet(request, response); //에러원인
+		doGet(request, response);
 	}
 
 }

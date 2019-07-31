@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>OrderCon</title>
+<title>회원가입</title>
 
 <style>  
 .mytable 

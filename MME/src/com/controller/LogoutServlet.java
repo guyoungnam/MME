@@ -30,7 +30,7 @@ public class LogoutServlet extends HttpServlet {
 			nextPage="LoginUIServlet";
 	session.setAttribute("mesg", "¸Þ½ÃÁö");
 		}else {
-			nextPage="MainServlet";
+			nextPage="Main";
 			session.invalidate();
 		}
 

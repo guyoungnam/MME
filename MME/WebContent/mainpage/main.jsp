@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>OrderCon</title>
+<title>메인화면</title>
 
 <style>  
 .mytable 
@@ -28,7 +28,7 @@
 <table class="mytable">
 	<tr>
 		<td style="width:678px;text-align:left;"><jsp:include page="../common/userinfo.jsp" flush="true" /></td>
-		<td style="width:300px;text-align:right;"><jsp:include page="../common/userlink.jsp" flush="true" /></td>
+		<td style="width:600px;text-align:right;"><jsp:include page="../common/userlink.jsp" flush="true" /></td>
 	</tr>
 </table>
 <hr>

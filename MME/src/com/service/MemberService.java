@@ -100,13 +100,27 @@ public class MemberService {
 			MemberDAO dao = new MemberDAO();
 			result=dao.memberUpdate(session,mDTO);
 			
-			System.out.println("********테스트service********");
-			System.out.println("mDTO 확인"+mDTO);
 			session.commit();
 		}finally {
 			session.close();
 		}
 		return result;
+	}
+
+	public int idSearch(MemberDTO iDTO) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int result =0;
+		try {
+			MemberDAO dao = new MemberDAO();
+		  result =dao.idSearch(session,iDTO);
+	
+			
+			session.commit();
+		}finally {
+			session.close();
+		}
+		return result;
+		
 	}
 
 

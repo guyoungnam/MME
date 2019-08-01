@@ -26,7 +26,6 @@ public class MemberDAO {
 	public MemberDTO login(SqlSession session, HashMap<String, String> map) {
 		MemberDTO dto =
 				session.selectOne("MemberMapper.login", map);
-		System.out.println("map나오나DAO"+map);
 		return dto;
 	}
 
@@ -38,8 +37,12 @@ public class MemberDAO {
 
 	public int memberUpdate(SqlSession session, MemberDTO mDTO) {
 		int n = session.insert("MemberMapper.memberUpdate", mDTO);
-		System.out.println("********테스트DAO********");
-		System.out.println("mDTO 확인"+mDTO);
+
+		return n;
+	}
+
+	public int idSearch(SqlSession session, MemberDTO iDTO) {
+		int n = session.selectOne("MemberMapper.idSearch", iDTO);
 		return n;
 	}
 	}

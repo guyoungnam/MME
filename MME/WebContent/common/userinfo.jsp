@@ -14,7 +14,7 @@
  		<tr>
  			<td><a href="LoginUI">로그인</a></td>
  			<td><a href="MemberUI">회원가입</a> </td>
- 			<td><a href="">아이디/비번 찾기</a> </td>
+ 			<td><a href="IdSearchUI">아이디/비번 찾기</a> </td>
  			<td><a href="BoardUi">게시판</a></td>
  			<td><span style="font-size:30px;">&nbsp;${title}</span></td>
 <!--  			<td><img alt="" src="images/1.png" width="200"/></td> -->

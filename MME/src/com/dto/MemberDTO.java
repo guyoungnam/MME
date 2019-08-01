@@ -59,6 +59,24 @@ public class MemberDTO
 		this.manager_code = "";
 		this.cre_dt = null;
 	}
+	
+	public MemberDTO(String user_name, int user_mobile1,
+			int user_mobile2, int user_mobile3)
+	{
+		super();
+		this.user_id = "";
+		this.user_pw = "";
+		this.user_name = user_name;
+		this.user_alias = "";
+		this.user_mobile1 = user_mobile1;
+		this.user_mobile2 = user_mobile2;
+		this.user_mobile3 = user_mobile3;
+		this.user_address = "";
+		this.user_brand = "";
+		this.seller_num = "";
+		this.manager_code = "";
+		this.cre_dt = null;
+	}
 
 	public String getUser_id()
 	{

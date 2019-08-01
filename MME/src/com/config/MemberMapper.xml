@@ -135,7 +135,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 </insert>
 
+<select id="idSearch" resultType="MemberDTO" parameterType="MemberDTO">
 
+	SELECT 
+		user_id, 
+		user_pw, 
+		user_alias, 
+		user_name, 
+		user_mobile1, 
+		user_mobile2, 
+		user_mobile3, 
+		user_address, 
+		user_brand, 
+		seller_num, 
+		manager_code,
+		cre_dt
+	FROM USER_INFO
+	WHERE user_name = #{'user_name'} and user_mobile1 = #{user_mobile1} and user_mobile2 =#{user_mobile2}
+       and user_mobile3 =#{user_mobile3}
+
+</select>
 
 
 </mapper>

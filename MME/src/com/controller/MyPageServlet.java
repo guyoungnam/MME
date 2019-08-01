@@ -29,7 +29,7 @@ public class MyPageServlet extends HttpServlet {
 		
 		if(dto==null) {
 			nextPage="LoginUI";
-	    session.setAttribute("mesg", "로그인이 필요한 작업입니다.");
+	    
 		}else {
 			nextPage="mainpage/mypage.jsp";
 			
@@ -39,12 +39,25 @@ public class MyPageServlet extends HttpServlet {
 					new MemberService();
 			MemberDTO xxx = service.mypage(user_id);
 			session.setAttribute("login", xxx);
+			
+			System.out.println("확인중xxxx "+xxx);
+			System.out.println("확인중xxxxx ");
 		}
 		
-		RequestDispatcher dis=
-				request.getRequestDispatcher(nextPage);
-		dis.forward(request, response);
-	}
+		
+	
+		if(dto == null) {
+			nextPage= "LoginUI";
+	
+		
+		}else {
+			nextPage= "Main";
+			session.setAttribute("login", dto);
+		}
+			
+			response.sendRedirect(nextPage);
+		}
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

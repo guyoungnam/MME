@@ -27,22 +27,23 @@ public class LoginServlet extends HttpServlet {
 		map.put("user_id",user_id );
 		map.put("user_pw",user_pw);
 		
-		System.out.println("테스트: 넘어오나?");
 	
-		
 		MemberService service = new MemberService();
 		MemberDTO dto = service.login(map);
 		
-		
-		
+	
+	HttpSession session=request.getSession();
+	
 	String nextPage=null;	
 	if(dto == null) {
 		nextPage= "LoginUI";
+		session.setAttribute("meg", "로그인실패");
 		
 	}else {
 		nextPage= "Main";
-		HttpSession session=request.getSession();
+
 		session.setAttribute("login", dto);
+		session.setAttribute("meg", "로그인성공");
 	}
 		
 		response.sendRedirect(nextPage);

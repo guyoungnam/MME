@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>아아디 찾기</title>
 
 <style>  
 .mytable 

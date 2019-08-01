@@ -20,7 +20,23 @@
         		inputForm.user_pw.focus();
         		return false;
         		}
-        }			
+        	if(inputForm.user_id.value.indexOf(" ")>=0)
+        		{alert("아이디에 공백을 사용할 수 없습니다.");
+        		inputForm.user_id.focus();
+        		inputForm.user_id.select();
+        		return false;
+        		
+            	if(inputForm.user_id.value.length<4 ||inputForm.user_id.value.length4>12)
+        		{alert("아이디를 4~12자까지 입력해주세요");
+        		inputForm.user_id.focus();
+        		inputForm.user_id.select();
+        		return false;
+        		
+        		}
+      
+ 
+  
+        	}			
         
  
 		function goJoinForm(){

@@ -8,6 +8,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+
+
 <style>  
 
 .userjoininfo
@@ -17,9 +19,37 @@
 .userinfo th, .userinfo td { border:0px solid black; }
 </style>
 
+
+
 <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
 
 <script type="text/javascript">
+
+var httpRequest = new XMLHttpRequest();
+function selecOne()
+{
+	httpRequest.onreadystatechange = responseFun;
+	var user_name = document.getElementById("user_name");
+	var user_mobile1 = document.getElementById("user_mobile1");
+	var user_mobile2 = document.getElementById("user_mobile2");
+	var user_mobile3 = document.getElementById("user_mobile3");
+	
+	var queryString = 'Search?user_name=' + user_name
+	+"&user_mobile1="+user_mobile1
+	+"&user_mobile2="+user_mobile2
+	+"&user_mobile3="+user_mobile3;
+
+httpRequest.open("get", queryString, true);
+httpRequest.send(null);
+
+	}
+
+function responseFun()
+{
+	consloe.log('${search.user_id}');
+	consloe.log('${search.user_name}');
+	var findCompl = "당신의 아이디는 ${search.user_id} ";
+	}
 
 </script>
 
@@ -43,7 +73,7 @@
 	<tr>
 		<td style="text-align:right;width:180px;"></td>
 		<td>
-			<input type="submit" value="ID 찾기" />&nbsp;&nbsp;<input type="button" onclick="user_reset()" value="취소" />
+			<input type="submit" value="ID 찾기" onclick="selectOne()" />&nbsp;&nbsp;<input type="button" onclick="user_reset()" value="취소" />
 		</td>
 	</tr>
 	

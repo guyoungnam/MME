@@ -13,9 +13,9 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.tribes.MembershipService;
 
-import com.dto.MemberDTO;
+import com.dto.UserDTO;
 import com.dto.SellerDTO;
-import com.service.MemberService;
+import com.service.UserService;
 import com.service.SellerService;
 
 
@@ -25,6 +25,9 @@ public class MemberAddServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		
+	    String nextpage="";
+	      
 		String user_id = request.getParameter("user_id");
 		String user_pw = request.getParameter("user_pw");
 		String user_name = request.getParameter("user_name");
@@ -35,31 +38,8 @@ public class MemberAddServlet extends HttpServlet {
 		String user_address = request.getParameter("user_address");
 		String user_brand = request.getParameter("user_brand");
 		
-		
-		
-//		MemberAdd?user_id=1
-//				&user_pw=2
-//				&user_name=3
-//				&user_alias=4
-//				&user_mobile1=5
-//				&user_mobile2=6
-//				&user_mobile3=7
-//				&user_address=N61
-//				&user_brand=B01
-//				
-//				& seller_check=0
-//				
-//				&seller_num=
-//				&seller_name=
-//				&seller_post=
-//				&seller_address1=
-//				&seller_address2=
-//				&seller_product_type=NC2
-		
-		
-
-		
-		  MemberDTO mDTO = new MemberDTO(user_id, user_pw, user_name, user_alias, 
+	
+		  UserDTO mDTO = new UserDTO(user_id, user_pw, user_name, user_alias, 
 	        		Integer.parseInt(user_mobile1), 
 	        		Integer.parseInt(user_mobile2), 
 	        		Integer.parseInt(user_mobile3), 
@@ -68,26 +48,27 @@ public class MemberAddServlet extends HttpServlet {
 		  
 		  String seller_check = request.getParameter("seller_check");
 	        
-	        MemberService service = new MemberService();
+	        UserService service = new UserService();
 		
-	    	
+	       
 	        if(seller_check.equals("0")) //
 	        {
-	        	int checkNum = service.memberAdd(mDTO);
+	        	int checkNum = service.userAdd(mDTO);
 	        	if(checkNum > 0)
 	        	{
-	        		RequestDispatcher dis=
-		    				request.getRequestDispatcher("mainpage/main.jsp");
-	        		dis.forward(request, response);
-	        		request.setAttribute("mesg", "ȸ�����ԿϷ�");
 	        		
+	        		request.setAttribute("alert", "사용자 저장 완료 ");	
+	        		request.setAttribute("title", "사용자 페이지");
+	        		nextpage ="mainpage/mypage.jsp"; //마이 페이지 이동
 	        	}
 	        	else
 	        	{
-	        		request.setAttribute("alert", "�޽���1");	
+	        
+	        		request.setAttribute("alert", "사용자 저장 실패 ");
+	        		nextpage = "mainpage/main.jsp";  //메인 페이지 이동
 	        	}
 	        }
-	        else
+	        else  //사업자
 	        {
 	        	
 	
@@ -116,16 +97,26 @@ public class MemberAddServlet extends HttpServlet {
    		
 	        
 	        	if(checkNum > 0) {
-	        		RequestDispatcher dis=
-		    				request.getRequestDispatcher("mainpage/main.jsp");
-	        		dis.forward(request, response);
+	        		
+	        		request.setAttribute("alert", "Seller 저장 완료 ");	
+	        		request.setAttribute("title", "Seller 페이지");
+	        		
+	        	    mDTO.setUser_pw(null);	
+	        	
 	        		
 	        	}else {
-	        		request.setAttribute("alert", "�޽���2 ");	
-	        	
+	        		
+	        		request.setAttribute("uDTO", mDTO);
+        			request.setAttribute("sDTO", sDTO);
+        	
 	        }
 	        	
+	        	nextpage = "mainpage/mypage.jsp";
+	        	
 	}  
+	        
+	        RequestDispatcher dis = request.getRequestDispatcher(nextpage);
+			dis.forward(request, response);
 	}	
 	       
 

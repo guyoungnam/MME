@@ -4,12 +4,12 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.config.MySqlSessionFactory;
 import com.dao.SellerDAO;
-import com.dto.MemberDTO;
+import com.dto.UserDTO;
 import com.dto.SellerDTO;
 
 public class SellerService {
 
-	public int sellerAdd(MemberDTO mDTO, SellerDTO sDTO) {
+	public int sellerAdd(UserDTO mDTO, SellerDTO sDTO) {
 		
 		SqlSession session = MySqlSessionFactory.getSession();
 		int result =0;
@@ -17,7 +17,7 @@ public class SellerService {
 		{
 			SellerDAO dao = new SellerDAO();
 			
-			result = dao.sellerAdd(session, mDTO, sDTO); //¿¡·¯ ¿øÀÎ
+			result = dao.sellerAdd(session, mDTO, sDTO); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			
 			if(result > 0)
 			{
@@ -55,14 +55,14 @@ public class SellerService {
 		return result;
 	}
 
-	public int sellerUpdate(MemberDTO mDTO, SellerDTO sDTO) {
+	public int sellerUpdate(UserDTO mDTO, SellerDTO sDTO) {
 		SqlSession session = MySqlSessionFactory.getSession();
 		int result =0;
 		try
 		{
 			SellerDAO dao = new SellerDAO();
 			
-			result = dao.sellerUpdate(session, mDTO, sDTO); //¿¡·¯ ¿øÀÎ
+			result = dao.sellerUpdate(session, mDTO, sDTO); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			
 			if(result > 0)
 			{

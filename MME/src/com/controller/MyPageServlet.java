@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.dto.MemberDTO;
-import com.service.MemberService;
+import com.dto.UserDTO;
+import com.service.UserService;
 
 
 @WebServlet("/MyPage")
@@ -22,8 +22,8 @@ public class MyPageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		MemberDTO dto = 
-				(MemberDTO)session.getAttribute("login");
+		UserDTO dto = 
+				(UserDTO)session.getAttribute("login");
 		
 		String nextPage= null;
 		
@@ -33,15 +33,15 @@ public class MyPageServlet extends HttpServlet {
 		}else {
 			nextPage="mainpage/mypage.jsp";
 			
-			//DBÁ¢¼Ó
+			//DBï¿½ï¿½ï¿½ï¿½
 			String user_id = dto.getUser_id();
-			MemberService service = 
-					new MemberService();
-			MemberDTO xxx = service.mypage(user_id);
+			UserService service = 
+					new UserService();
+			UserDTO xxx = service.mypage(user_id);
 			session.setAttribute("login", xxx);
 			
-			System.out.println("È®ÀÎÁßxxxx "+xxx);
-			System.out.println("È®ÀÎÁßxxxxx ");
+			System.out.println("È®ï¿½ï¿½ï¿½ï¿½xxxx "+xxx);
+			System.out.println("È®ï¿½ï¿½ï¿½ï¿½xxxxx ");
 		}
 		
 		

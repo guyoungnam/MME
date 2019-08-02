@@ -2,12 +2,12 @@ package com.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.dto.MemberDTO;
+import com.dto.UserDTO;
 import com.dto.SellerDTO;
 
 public class SellerDAO {
 
-	public int sellerAdd(SqlSession session, MemberDTO mDTO, SellerDTO sDTO) {
+	public int sellerAdd(SqlSession session, UserDTO mDTO, SellerDTO sDTO) {
 		int n = session.insert("SellerMapper.sellerAdd", sDTO); 
 		if(n > 0)
 		{
@@ -21,7 +21,7 @@ public class SellerDAO {
 	
 	}
 
-	public int sellerUpdate(SqlSession session, MemberDTO mDTO, SellerDTO sDTO) {
+	public int sellerUpdate(SqlSession session, UserDTO mDTO, SellerDTO sDTO) {
 		int n = session.insert("SellerMapper.sellerUpdate", sDTO); 
 		if(n > 0)
 		{

@@ -19,7 +19,7 @@ public class IdSearchUIServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		request.setAttribute("title", "¾ÆÀÌµð/ºñ¹øÃ£±â");
+		request.setAttribute("title", "ì•„ì•„ë””/ë¹„ë²ˆì°¾ê¸°");
 				
 		RequestDispatcher dis = request.getRequestDispatcher("mainpage/id_serach.jsp");
 		dis.forward(request, response);

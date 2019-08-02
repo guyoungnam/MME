@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dao.MemberDAO;
-import com.dto.MemberDTO;
+import com.dao.UserDAO;
+import com.dto.UserDTO;
 import com.dto.SellerDTO;
-import com.service.MemberService;
+import com.service.UserService;
 import com.service.SellerService;
 
 @WebServlet("/MemberUtil")
@@ -26,7 +26,7 @@ public class MemberUtilServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		String opt = request.getParameter("opt");
-		MemberService service = new MemberService();
+		UserService service = new UserService();
 		SellerService sService = new SellerService();
 		
 		if(opt != null)
@@ -38,7 +38,7 @@ public class MemberUtilServlet extends HttpServlet {
     				{
     					String user_id = request.getParameter("user_id");
         				
-        				MemberDTO udto = service.checkUserid(user_id);
+        				UserDTO udto = service.checkUserid(user_id);
         				if(udto != null )
         				{
         					out.print("true");
@@ -57,7 +57,7 @@ public class MemberUtilServlet extends HttpServlet {
     				{
     					String user_alias = request.getParameter("user_alias");
         				
-        				MemberDTO udto = service.checkUseralias(user_alias);
+        				UserDTO udto = service.checkUseralias(user_alias);
         				if(udto != null )
         				{
         					out.print("true");

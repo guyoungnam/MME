@@ -19,19 +19,19 @@ public class MemberUIServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		request.setAttribute("title", "È¸¿ø°¡ÀÔ");
+		request.setAttribute("title", "íšŒì›ê°€ì…");
 		
 		/**
-		 * ÇöÀç °ÅÁÖ Áö¿ª
+		 * í˜„ì¬ ê±°ì£¼ ì§€ì—­
 		 */
 		request.setAttribute("area_info", OtherELE.getJson(OtherELE.AREA_ELE));
 		/**
-		 * ÀÚµ¿Â÷ ¼±È£ ºê·£µå
+		 * ìë™ì°¨ ì„ í˜¸ ë¸Œëœë“œ
 		 */
 		request.setAttribute("brand_info", OtherELE.getJson(CarELE.BRAND_ELE));
 		
 		/**
-		 * °ßÀû °¡´É Â÷·® Á¾·ù
+		 * ê²¬ì  ê°€ëŠ¥ ì°¨ëŸ‰ ì¢…ë¥˜
 		 */
 		request.setAttribute("product_info", OtherELE.getJson(CarELE.NEW_CAR_ELE));
 		

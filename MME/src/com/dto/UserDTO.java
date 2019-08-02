@@ -1,6 +1,6 @@
 package com.dto;
 
-public class MemberDTO
+public class UserDTO
 {
 	private String user_id;
 	private String user_pw;
@@ -17,12 +17,12 @@ public class MemberDTO
 	
 	private String cre_dt;
 
-	public MemberDTO()
+	public UserDTO()
 	{
 		super();
 	}
 	
-	public MemberDTO(String user_id, String user_pw, String user_name, String user_alias, int user_mobile1,
+	public UserDTO(String user_id, String user_pw, String user_name, String user_alias, int user_mobile1,
 			int user_mobile2, int user_mobile3, String user_address, String user_brand, String seller_num,
 			String manager_code)
 	{
@@ -42,7 +42,7 @@ public class MemberDTO
 	}
 	
 	
-	public MemberDTO(String user_id, String user_pw, String user_name, String user_alias, int user_mobile1,
+	public UserDTO(String user_id, String user_pw, String user_name, String user_alias, int user_mobile1,
 			int user_mobile2, int user_mobile3, String user_address, String user_brand)
 	{
 		super();
@@ -60,7 +60,7 @@ public class MemberDTO
 		this.cre_dt = null;
 	}
 	
-	public MemberDTO(String user_name, int user_mobile1,
+	public UserDTO(String user_name, int user_mobile1,
 			int user_mobile2, int user_mobile3)
 	{
 		super();

@@ -13,9 +13,9 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.tribes.MembershipService;
 
-import com.dto.MemberDTO;
+import com.dto.UserDTO;
 import com.dto.SellerDTO;
-import com.service.MemberService;
+import com.service.UserService;
 import com.service.SellerService;
 
 
@@ -28,14 +28,14 @@ public class MemberUpdateServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		MemberDTO dto = 
-				(MemberDTO)session.getAttribute("login");
+		UserDTO dto = 
+				(UserDTO)session.getAttribute("login");
 		
 		String nextPage= null;
 		
 		if(dto==null) {
 			nextPage="LoginUI";
-			session.setAttribute("mesg", "·Î±×ÀÎÀÌ ÇÊ¿äÇÑ ÀÛ¾÷ÀÔ´Ï´Ù.");
+			session.setAttribute("mesg", "ë‹¤ì‹œì‹œë„.");
 		}else {
 			nextPage="MyPage";
 			String user_id = request.getParameter("user_id");
@@ -49,7 +49,7 @@ public class MemberUpdateServlet extends HttpServlet {
 			String user_brand = request.getParameter("user_brand");
 		
 			
-			  MemberDTO mDTO = new MemberDTO(user_id, user_pw, user_name, user_alias, 
+			  UserDTO mDTO = new UserDTO(user_id, user_pw, user_name, user_alias, 
 		        		Integer.parseInt(user_mobile1), 
 		        		Integer.parseInt(user_mobile2), 
 		        		Integer.parseInt(user_mobile3), 
@@ -57,14 +57,14 @@ public class MemberUpdateServlet extends HttpServlet {
 		        		user_brand);
 			
 	        
-			MemberService service = new MemberService();
+			UserService service = new UserService();
 
 			
 			String seller_check = request.getParameter("seller_check");
 		
 	        if(seller_check.equals("0")) 
 	        {
-	        	int checkNum = service.memberUpdate(mDTO);
+	        	int checkNum = service.userUpdate(mDTO);
 	        	if(checkNum > 0)
 	        	{
 	        		RequestDispatcher dis=
@@ -73,7 +73,7 @@ public class MemberUpdateServlet extends HttpServlet {
 	        	}
 	        	else
 	        	{
-	        		request.setAttribute("alert", "¸Ş½ÃÁö2 ");
+	        		request.setAttribute("alert", "í™•ì¸ ");
 	        	}
 	        }
 	        else
@@ -112,7 +112,7 @@ public class MemberUpdateServlet extends HttpServlet {
 	        	}
 	        	else
 	        	{
-	        		request.setAttribute("alert", "½ÇÆĞ ");
+	        		request.setAttribute("alert", "í™•ì¸ ");
 	        	}
 	        	
 	            

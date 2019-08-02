@@ -248,11 +248,11 @@ $(document).ready(function(){
         	sendCheck = false;
        	}
         
-//          if(!sellerAjaxCheck)
-//         	{
-//         	alert("사업자 번호 중복 체크를 해 주세요!");
-//         	sendCheck = false;
-//         	}
+          if(!sellerAjaxCheck)
+         	{
+         	alert("사업자 번호 중복 체크를 해 주세요!");
+         	sendCheck = false;
+         	}
         
        // sendCheck = true;
  //		if(sendCheck)

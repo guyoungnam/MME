@@ -9,8 +9,18 @@ import java.util.Set;
 public class OtherELE
 {
 
+	public static final HashMap<String, String> LOGIN_TYPE = new HashMap<String, String>()
+	{
+		{
+			put("0", "ì¼ë°˜ ì‚¬ìš©ì");
+			put("1", "ì‚¬ì—…ì");
+			put("2", "ê´€ë¦¬ì");
+		}
+	};
+	
+	
 	/**
-	 * °ü¸®ÀÚ ±ÇÇÑ ÆäÀÌÁö 
+	 * ê´€ë¦¬ì ê¶Œí•œ í˜ì´ì§€ 
 	 */
 	public static final HashMap<String, String> MGMT_PAGE_AUTH_ELE = new HashMap<String, String>()
 	{
@@ -22,12 +32,12 @@ public class OtherELE
 	};
 	
 	/**
-	 * ¸ŞÀÏ Á¤º¸
+	 * ë©”ì¼ ì •ë³´
 	 */
 	public static final HashMap<String, String> MAIL_ELE = new HashMap<String, String>()
 	{
 		{
-			put("M00", "Á÷Á¢ÀÔ·Â");
+			put("M00", "ì§ì ‘ì…ë ¥");
 			put("M01", "gmail.com");
 			put("M02", "naver.com");
 			put("M03", "daum.net");
@@ -35,33 +45,33 @@ public class OtherELE
 	};
 	
 	/**
-	 * Áö¿ª Á¤º¸
+	 * ì§€ì—­ ì •ë³´
 	 */
 	public static final HashMap<String, String> AREA_ELE = new HashMap<String, String>()
 	{
 		{
-			put("N02", "¼­¿ï");
-			put("N51", "ºÎ»ê");
-			put("N53", "´ë±¸");
-			put("N32", "ÀÎÃµ");
-			put("N62", "±¤ÁÖ");
-			put("N42", "´ëÀü");
-			put("N52", "¿ï»ê");
-			put("N44", "¼¼Á¾");
-			put("N31", "°æ±â");
-			put("N33", "°­¿ø");
-			put("N43", "ÃæºÏ");
-			put("N41", "Ãæ³²");
-			put("N63", "ÀüºÏ");
-			put("N61", "Àü³²");
-			put("N54", "°æºÏ");
-			put("N55", "°æ³²");
-			put("N64", "Á¦ÁÖ");
+			put("N02", "ì„œìš¸");
+			put("N51", "ë¶€ì‚°");
+			put("N53", "ëŒ€êµ¬");
+			put("N32", "ì¸ì²œ");
+			put("N62", "ê´‘ì£¼");
+			put("N42", "ëŒ€ì „");
+			put("N52", "ìš¸ì‚°");
+			put("N44", "ì„¸ì¢…");
+			put("N31", "ê²½ê¸°");
+			put("N33", "ê°•ì›");
+			put("N43", "ì¶©ë¶");
+			put("N41", "ì¶©ë‚¨");
+			put("N63", "ì „ë¶");
+			put("N61", "ì „ë‚¨");
+			put("N54", "ê²½ë¶");
+			put("N55", "ê²½ë‚¨");
+			put("N64", "ì œì£¼");
 		}
 	};
 	
 	/**
-	 * map À»  json Çü½ÄÀÇ  array ·Î º¯È¯
+	 * map ì„  json í˜•ì‹ì˜  array ë¡œ ë³€í™˜
 	 * @param _ele HashMap<String, String>
 	 * @return List
 	 */
@@ -101,21 +111,7 @@ public class OtherELE
 		return result.toString();
 	}
 	
-	public static String getOption(HashMap<String, String> _ele)
-	{
-		StringBuilder result = new StringBuilder();
-		
-		Iterator<String> keys = _ele.keySet().iterator();
-		while( keys.hasNext() )
-		{
-			String key = keys.next();
-			String value = _ele.get(key);
-			result.append("<option value='"+key+"'>"+value+"</option>");
-		}
-		
-		return result.toString();
-	}
-
+	
 	public static List<String> getKeys(HashMap<String, String> _ele)
 	{
 		return new ArrayList<String>(_ele.keySet());

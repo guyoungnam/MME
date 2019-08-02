@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.dto.MemberDTO;
-import com.service.MemberService;
+import com.dto.UserDTO;
+import com.service.UserService;
 
 
 @WebServlet("/Login")
@@ -28,8 +28,8 @@ public class LoginServlet extends HttpServlet {
 		map.put("user_pw",user_pw);
 		
 	
-		MemberService service = new MemberService();
-		MemberDTO dto = service.login(map);
+		UserService service = new UserService();
+		UserDTO dto = service.login(map);
 		
 	
 	HttpSession session=request.getSession();
@@ -37,13 +37,13 @@ public class LoginServlet extends HttpServlet {
 	String nextPage=null;	
 	if(dto == null) {
 		nextPage= "LoginUI";
-		session.setAttribute("meg", "·Î±×ÀÎ½ÇÆÐ");
+		session.setAttribute("meg", "ï¿½Î±ï¿½ï¿½Î½ï¿½ï¿½ï¿½");
 		
 	}else {
 		nextPage= "Main";
 
 		session.setAttribute("login", dto);
-		session.setAttribute("meg", "·Î±×ÀÎ¼º°ø");
+		session.setAttribute("meg", "ï¿½Î±ï¿½ï¿½Î¼ï¿½ï¿½ï¿½");
 	}
 		
 		response.sendRedirect(nextPage);

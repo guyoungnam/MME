@@ -271,26 +271,26 @@ $(document).ready(function(){
 
 </head>
 <body>
-<form name="userinfoform" id="userinfoform" action="MemberUpdate" method="post">
+<form name="userinfoform" id="userinfoform" action="MyPage" method="post">
 <table class="userjoininfo">
 	<tr>
-		<td style="text-align:right;width:180px;">아이디&nbsp;:&nbsp;&nbsp;</td><td><input type="text" name="user_id" id="user_id" value="${login.user_id}" />&nbsp;<input type="button" id="idoverlap" value="중복체크" /></td>
+		<td style="text-align:right;width:180px;">아이디&nbsp;:&nbsp;&nbsp;</td><td><input type="text" name="user_id" id="user_id" value="${uDTO.user_id}" />&nbsp;<input type="button" id="idoverlap" value="중복체크" /></td>
 	</tr>
 	<tr>
-		<td style="text-align:right;width:180px;">암호&nbsp;:&nbsp;&nbsp;</td><td><input type="password" name="user_pw" id="user_pw" value="${login.user_pw}" /></td>
+		<td style="text-align:right;width:180px;">암호&nbsp;:&nbsp;&nbsp;</td><td><input type="password" name="user_pw" id="user_pw" value="${uDTO.user_pw}" /></td>
 	</tr>
 	<tr>
-		<td style="text-align:right;width:180px;">이름&nbsp;:&nbsp;&nbsp;</td><td><input type="text" name="user_name" id="user_name" value="${login.user_name}" /></td>
+		<td style="text-align:right;width:180px;">이름&nbsp;:&nbsp;&nbsp;</td><td><input type="text" name="user_name" id="user_name" value="${uDTO.user_name}" /></td>
 	</tr>
 	<tr>
-		<td style="text-align:right;width:180px;">닉네임&nbsp;:&nbsp;&nbsp;</td><td><input type="text" id="user_alias" name="user_alias" value="${login.user_alias}" />&nbsp;<input type="button" id="aliasoverlap" value="중복체크" /></td>
+		<td style="text-align:right;width:180px;">닉네임&nbsp;:&nbsp;&nbsp;</td><td><input type="text" id="user_alias" name="user_alias" value="${uDTO.user_alias}" />&nbsp;<input type="button" id="aliasoverlap" value="중복체크" /></td>
 	</tr>
 	<tr>
 		<td style="text-align:right;width:180px;">전화번호&nbsp;:&nbsp;&nbsp;</td>
 		<td>
-			<input type="text" name="user_mobile1" id="user_mobile1" value="${login.user_mobile1}" size="3" maxlength="3" />
-			-<input type="text" name="user_mobile2" id="user_mobile2" value="${login.user_mobile2}" size="5" maxlength="4" />
-			-<input type="text" name="user_mobile3" id="user_mobile3" value="${login.user_mobile3}" size="5" maxlength="4" />
+			<input type="text" name="user_mobile1" id="user_mobile1" value="${uDTO.user_mobile1}" size="3" maxlength="3" />
+			-<input type="text" name="user_mobile2" id="user_mobile2" value="${uDTO.user_mobile2}" size="5" maxlength="4" />
+			-<input type="text" name="user_mobile3" id="user_mobile3" value="${uDTO.user_mobile3}" size="5" maxlength="4" />
 		</td>
 	</tr>
 	

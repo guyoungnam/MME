@@ -37,13 +37,13 @@ public class LoginServlet extends HttpServlet {
 	String nextPage=null;	
 	if(dto == null) {
 		nextPage= "LoginUI";
-		session.setAttribute("meg", "�α��ν���");
+		session.setAttribute("meg", "로그인이 필요합니다.");
 		
 	}else {
 		nextPage= "Main";
 
 		session.setAttribute("login", dto);
-		session.setAttribute("meg", "�α��μ���");
+		session.setAttribute("meg", "로그인완료");
 	}
 		
 		response.sendRedirect(nextPage);

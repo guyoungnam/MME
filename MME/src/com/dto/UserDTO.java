@@ -78,6 +78,11 @@ public class UserDTO
 		this.cre_dt = null;
 	}
 
+	public UserDTO(String user_id2, String user_pw2, String user_name2, String user_alias2, String user_mobile12,
+			String user_mobile22, String user_mobile32, String user_address2, String user_brand2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getUser_id()
 	{
 		return user_id;

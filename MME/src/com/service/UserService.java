@@ -11,19 +11,22 @@ import com.dto.UserDTO;
 
 public class UserService {
 
-	public int userAdd(UserDTO mDTO) {
+	public int userAdd(UserDTO uDTO) {
 		
 	SqlSession session = MySqlSessionFactory.getSession();
 	int result =0;
-
 	try {
 		UserDAO dao = new UserDAO();
-		result=dao.userAdd(session,mDTO);
+		result=dao.userAdd(session,uDTO);
 		session.commit();
+
 	}finally {
 		session.close();
 	}
+	System.out.println("Service에서 result 확인중"+result);
 	return result;
+	
+	
 }//end userAdd
 
 	public UserDTO checkUserid(String user_id)
@@ -66,7 +69,6 @@ public class UserService {
 		SqlSession session = MySqlSessionFactory.getSession();
 		UserDTO dto =null;
 		UserDAO dao =new UserDAO();
-		System.out.println("map������"+map);
 		try {
 			dto = dao.login(session,map);
 		}finally {
@@ -77,36 +79,23 @@ public class UserService {
 
 	}
 
-	public UserDTO mypage(String user_id) {
+	public int mypage(UserDTO uDTO) {
 		SqlSession session = MySqlSessionFactory.getSession();
-		UserDTO dto =null;
+		int result =0;
 		
 		try {
 			UserDAO dao =new UserDAO();
-			dto = dao.mypage(session,user_id);
+			result=dao.mypage(session,uDTO);
 		}finally {
 			session.close();
 			
-		}
-		return dto;
-		
-		
-	}
-
-	public int userUpdate(UserDTO mDTO) {
-		SqlSession session = MySqlSessionFactory.getSession();
-		int result =0;
-
-		try {
-			UserDAO dao = new UserDAO();
-			result=dao.userUpdate(session,mDTO);
-			
-			session.commit();
-		}finally {
-			session.close();
 		}
 		return result;
+		
+		
 	}
+
+	
 
 	public UserDTO idSearch(UserDTO iDTO) {
 		SqlSession session = MySqlSessionFactory.getSession();

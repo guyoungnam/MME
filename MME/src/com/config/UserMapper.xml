@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="userMapper">
+<mapper namespace="UserMapper">
 
 	        
-<insert id="UserAdd"  parameterType="UserDTO">
+<insert id="userAdd"  parameterType="UserDTO">
 
 	INSERT INTO USER_INFO (
 		user_id, 
@@ -97,43 +97,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 </select>
 
-<select id="mypage" resultType="UserDTO" parameterType="string">
+<update id="mypage"  parameterType="UserDTO">
 
-	SELECT 
-		user_id, 
-		user_pw, 
-		user_alias, 
-		user_name, 
-		user_mobile1, 
-		user_mobile2, 
-		user_mobile3, 
-		user_address, 
-		user_brand, 
-		seller_num, 
-		manager_code,
-		cre_dt
-	FROM USER_INFO
-	WHERE user_id = #{user_id}
-
-</select>
-
-<insert id="UserUpdate"  parameterType="UserDTO">
-
-	update USER_INFO 
-	set user_pw=#{user_pw}, 
-		user_alias=#{user_alias}, 
-		user_name=#{user_name}, 
-		user_mobile1=#{user_mobile1}, 
-		user_mobile2=#{user_mobile2}, 
-		user_mobile3=#{user_mobile3}, 
+	update USER_INFO set
+		user_pw=#{user_pw},
+		user_mobile1=#{user_mobile1},
+		user_mobile2=#{user_mobile2},
+		user_mobile3=#{user_mobile3},
 		user_address=#{user_address}, 
 		user_brand=#{user_brand},
 		seller_num=#{seller_num},
 		manager_code=#{manager_code}  
-		where user_id=#{user_id}
-		
+	WHERE user_id = #{user_id}
+	
+</update>
 
-</insert>
 
 <select id="idSearch" resultType="UserDTO" parameterType="UserDTO">
 

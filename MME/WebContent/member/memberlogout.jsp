@@ -23,12 +23,12 @@
 				if(data == "true")
 				{
 					alert("로그 아웃");
-					location.href = "MainPage";
+					location.href = "Main";
 				}
 				else
 				{
 					alert("로그 아웃 실패");
-					location.href = "MainPage";
+					location.href = "Main";
 				}
 			});
 		});

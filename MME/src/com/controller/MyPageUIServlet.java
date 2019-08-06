@@ -13,30 +13,31 @@ import javax.servlet.http.HttpSession;
 
 import com.itf.CarELE;
 import com.itf.OtherELE;
+import com.util.SessionMgmt;
 
 @WebServlet("/MyPageUI")
 public class MyPageUIServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		request.setAttribute("title", "¸¶ÀÌÆäÀÌÁö");
-		
-		/**
-		 * ÇöÀç °ÅÁÖ Áö¿ª
-		 */
-		request.setAttribute("area_info", OtherELE.getJson(OtherELE.AREA_ELE));
-		/**
-		 * ÀÚµ¿Â÷ ¼±È£ ºê·£µå
-		 */
-		request.setAttribute("brand_info", OtherELE.getJson(CarELE.BRAND_ELE));
-		
-		/**
-		 * °ßÀû °¡´É Â÷·® Á¾·ù
-		 */
-		request.setAttribute("product_info", OtherELE.getJson(CarELE.NEW_CAR_ELE));
-		
-		
-		RequestDispatcher dis = request.getRequestDispatcher("mainpage/mypage.jsp");
+	  SessionMgmt se = new SessionMgmt(request);
+	  
+	  String nextPath = "mainpage/mypage.jsp";
+	  
+	  if(se.getUdto()==null)
+	  {
+		  nextPath = "LoginUI";
+	  }
+	  else
+	  {
+		  se.setUdto();
+		  request.setAttribute("title", "ë§ˆì´í˜ì´ì§€");
+		  request.setAttribute("area_info", OtherELE.getJson(OtherELE.AREA_ELE));
+		  request.setAttribute("brand_info", OtherELE.getJson(CarELE.BRAND_ELE));
+		  request.setAttribute("product_info", OtherELE.getJson(CarELE.NEW_CAR_ELE));
+	  }
+
+		RequestDispatcher dis = request.getRequestDispatcher(nextPath);
 		dis.forward(request, response);
 	}
 

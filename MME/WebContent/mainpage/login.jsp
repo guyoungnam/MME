@@ -31,6 +31,6 @@
 	</tr>
 </table>
 <hr>
-<jsp:include page="../member/loginForm.jsp" flush="true" />
+<jsp:include page="../member/memberlogin.jsp" flush="true" />
 </body>
 </html>

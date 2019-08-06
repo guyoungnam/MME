@@ -254,13 +254,7 @@ $(document).ready(function(){
          	sendCheck = false;
          	}
         
-       // sendCheck = true;
- //		if(sendCheck)
- //		{
- //			$("#userinfoform").attr("action", "MemberAdd");
- //			$("#userinfoform").attr("method", "get");
- //			$("#userinfoform").submit();
-// 		}
+
 	}
 	
 	function user_reset()

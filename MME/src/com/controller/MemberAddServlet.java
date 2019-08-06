@@ -39,7 +39,7 @@ public class MemberAddServlet extends HttpServlet {
 		String user_brand = request.getParameter("user_brand");
 		
 	
-		  UserDTO mDTO = new UserDTO(user_id, user_pw, user_name, user_alias, 
+		  UserDTO uDTO = new UserDTO(user_id, user_pw, user_name, user_alias, 
 	        		Integer.parseInt(user_mobile1), 
 	        		Integer.parseInt(user_mobile2), 
 	        		Integer.parseInt(user_mobile3), 
@@ -49,17 +49,24 @@ public class MemberAddServlet extends HttpServlet {
 		  String seller_check = request.getParameter("seller_check");
 	        
 	        UserService service = new UserService();
-		
+		     
+	        
+	        System.out.println("seller_check 확인중"+seller_check);
 	       
 	        if(seller_check.equals("0")) //
 	        {
-	        	int checkNum = service.userAdd(mDTO);
+	        	int checkNum = service.userAdd(uDTO);
+	        	
+	        	System.out.println("uDTO 확인중"+uDTO);
+	        	System.out.println("checkNum 확인중"+checkNum);
+	        	
 	        	if(checkNum > 0)
 	        	{
 	        		
 	        		request.setAttribute("alert", "사용자 저장 완료 ");	
-	        		request.setAttribute("title", "사용자 페이지");
+	        		request.setAttribute("title", "회원정보");
 	        		nextpage ="mainpage/mypage.jsp"; //마이 페이지 이동
+	        		
 	        	}
 	        	else
 	        	{
@@ -90,9 +97,9 @@ public class MemberAddServlet extends HttpServlet {
 	            		seller_product_type
 	            		);
 	            
-	            mDTO.setSeller_num(seller_num);
+	            uDTO.setSeller_num(seller_num);
 	            
-	            int checkNum = sService.sellerAdd(mDTO, sDTO); 
+	            int checkNum = sService.sellerAdd(uDTO, sDTO); 
 	           
    		
 	        
@@ -101,12 +108,12 @@ public class MemberAddServlet extends HttpServlet {
 	        		request.setAttribute("alert", "Seller 저장 완료 ");	
 	        		request.setAttribute("title", "Seller 페이지");
 	        		
-	        	    mDTO.setUser_pw(null);	
+	        	    uDTO.setUser_pw(null);	
 	        	
 	        		
 	        	}else {
 	        		
-	        		request.setAttribute("uDTO", mDTO);
+	        		request.setAttribute("uDTO", uDTO);
         			request.setAttribute("sDTO", sDTO);
         	
 	        }

@@ -9,7 +9,7 @@
 	 <script>alert("${mesg}");</script>
 </c:if> 
  	
- <c:if test="${empty login}">
+ <c:if test="${empty uDTO}">
  	<table class="userinfo">
  		<tr>
  			<td><a href="LoginUI">로그인</a></td>
@@ -17,19 +17,19 @@
  			<td><a href="IdSearchUI">아이디/비번 찾기</a> </td>
  			<td><a href="BoardUi">게시판</a></td>
  			<td><span style="font-size:30px;">&nbsp;${title}</span></td>
-<!--  			<td><img alt="" src="images/1.png" width="200"/></td> -->
+
  		</tr>
  	</table>
 </c:if>  
     
- <c:if test="${!empty login}">
+ <c:if test="${!empty uDTO}">
  
  	<table class="userinfo">
  		<tr>
  			<td> </td>
- 			<td><a href="Logout">로그아웃</a> </td>
+ 			<td><a href="LogoutUI">로그아웃</a> </td>
  			<td><a href="MyPageUI">마이페이지</a></td>
- 			<td><span style="font-size:30px;">${login.user_name}</span>회원님</td>
+ 			<td><span style="font-size:30px;">${uDTO.user_name}</span>회원님</td>
  		</tr>
  	</table>
  	

@@ -19,7 +19,7 @@
 </style>
 
 <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
-<script type="text/javascript" src="js/GuUtil.js"></script>
+<script type="text/javascript" src="js/YeoUtil.js"></script>
 <script type="text/javascript">
 	var util = new YeoUtil();
 	
@@ -35,25 +35,27 @@
 			
 			util.getHttp("post","MemberUtil", param, "text", function (data){
 				
+			
 				if(data == "0")
 				{
 					alert("일반 회원");
-					location.href = "MainPage";
+					location.href = "Main";
 				}
 				else if(data == "1")
 				{
 					alert("판매자");
-					location.href = "MainPage";
+					location.href = "Main";
 				}
 				else if(data == "2")
 				{
 					alert("관리자");
-					location.href = "MainPage";
+					location.href = "Main";
 				}
 				else
 				{
 					alert("입력 하신 로그인 정보가 올바른지 확인 바랍니다.");
 					$("#user_id").focus();
+					
 				}
 			});
 		});

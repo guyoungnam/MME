@@ -6,163 +6,157 @@ public class CarELE
 {
 	
 	/**
-	 * Á¦Ç° Á¦Á¶ È¸»ç 
+	 * ì œí’ˆ ì œì¡° íšŒì‚¬ 
 	 */
 	public static final HashMap<String, String> MADE_IN_TYPE_ELE = new HashMap<String, String>()
 	{
 		{
-			put("M1", "±¹³»");
-			put("M2", "¼öÀÔ");
+			put("M1", "êµ­ë‚´");
+			put("M2", "ìˆ˜ì…");
 		}
 	};
 	
 	/**
-	 * Á¦Ç° Á¦Á¶ È¸»ç 
+	 * ì œí’ˆ ì œì¡° íšŒì‚¬ 
 	 */
 	public static final HashMap<String, String> BRAND_ELE = new HashMap<String, String>()
 	{
 		{
-			put("B01", "Çö´ëÀÚµ¿Â÷");
-			put("B02", "±â¾ÆÀÚµ¿Â÷");
-			put("B03", "½Ö¿ëÀÚµ¿Â÷");
+			put("B01", "í˜„ëŒ€ìë™ì°¨");
+			put("B02", "ê¸°ì•„ìë™ì°¨");
+			put("B03", "ìŒìš©ìë™ì°¨");
 		}
 	};
 
 	/**
-	 * ¿£ÁøÁ¾·ù 
+	 * ì—”ì§„ì¢…ë¥˜ 
 	 */
 	public static final HashMap<String, String> ENGINE_ELE = new HashMap<String, String>()
 	{
 		{
-			put("EA", "³»¿¬±â°ü(°¡¼Ö¸°)");
-			put("EB", "³»¿¬±â°ü(µğÁ©)");
-			put("EC", "ÇÏÀÌºê¸®µå(°¡¼Ö¸°)");
-			put("ED", "Àü±â(º£ÅÍ¸®)");
-			put("EE", "Àü±â(¼ö¼Ò)");
+			put("EA", "ë‚´ì—°ê¸°ê´€(ê°€ì†”ë¦°)");
+			put("EB", "ë‚´ì—°ê¸°ê´€(ë””ì ¤)");
+			put("EC", "í•˜ì´ë¸Œë¦¬ë“œ(ê°€ì†”ë¦°)");
+			put("ED", "ì „ê¸°(ë² í„°ë¦¬)");
+			put("EE", "ì „ê¸°(ìˆ˜ì†Œ)");
 		}
 	};
 	
 	/**
-	 * ÀÚµ¿Â÷ Á¾·ù 
+	 * ìë™ì°¨ ì¢…ë¥˜ 
 	 */
 	public static final HashMap<String, String> TYPE_ELE = new HashMap<String, String>()
 	{
 		{
-			put("TA", "½Â¿ë");
+			put("TA", "ìŠ¹ìš©");
 			put("TB", "SUV");
 			put("TC", "MPV");
-			put("TD", "¼ÒÇüÈ­¹°");
+			put("TD", "ì†Œí˜•í™”ë¬¼");
 		}
 	};
-	
 
 	/**
-	 * ÀÚµ¿Â÷ Å©±â ¼ÒÇü
+	 * ìë™ì°¨ í¬ê¸° ì†Œí˜•
 	 */
 	public static final HashMap<String, String> SIZE_ELE = new HashMap<String, String>()
 	{
 		{
-			put("SA", "¼ÒÇü");
-			put("SB", "ÁßÁßÇü");
-			put("SC", "ÁßÇü");
-			put("SD", "´ëÇü");
+			put("SA", "ì†Œí˜•");
+			put("SB", "ì¤‘ì¤‘í˜•");
+			put("SC", "ì¤‘í˜•");
+			put("SD", "ëŒ€í˜•");
 		}
 	};
 	
 	/**
-	 * ½Ç¸°´õ °¹¼ö 
+	 * ì‹¤ë¦°ë” ê°¯ìˆ˜ 
 	 */
 	public static final HashMap<String, String> CYLINDER_ELE = new HashMap<String, String>()
 	{
 		{
-			put("CA", "3±âÅë");
-			put("CB", "4±âÅë");
-			put("CC", "6±âÅë");
-			put("CD", "8½ÃÅë");
-			put("CE", "12±âÅë");
+			put("CA", "3ê¸°í†µ");
+			put("CB", "4ê¸°í†µ");
+			put("CC", "6ê¸°í†µ");
+			put("CD", "8ì‹œí†µ");
+			put("CE", "12ê¸°í†µ");
 		}
 	};
 	
 	/**
-	 * ±â¾î Å¸ÀÔ 
+	 * ê¸°ì–´ íƒ€ì… 
 	 */
 	public static final HashMap<String, String> GEAR_TYPE_ELE = new HashMap<String, String>()
 	{
 		{
-			put("GT1", "¼öµ¿");
-			put("GT2", "ÀÚµ¿");
+			put("GT1", "ìˆ˜ë™");
+			put("GT2", "ìë™");
 		}
 	};
 	
 	/**
-	 * ±â¾î´Ü¼ö 
+	 * ê¸°ì–´ë‹¨ìˆ˜ 
 	 */
 	public static final HashMap<String, String> GEAR_COUNT_ELE = new HashMap<String, String>()
 	{
 		{
-			put("G04", "4 ´Ü");
-			put("G05", "5 ´Ü");
-			put("G06", "6 ´Ü");
-			put("G07", "7 ´Ü");
-			put("G08", "8 ´Ü");
-			put("G09", "9 ´Ü");
-			put("G0A", "10 ´Ü");
+			put("G04", "4 ë‹¨");
+			put("G05", "5 ë‹¨");
+			put("G06", "6 ë‹¨");
+			put("G07", "7 ë‹¨");
+			put("G08", "8 ë‹¨");
+			put("G09", "9 ë‹¨");
+			put("G0A", "10 ë‹¨");
 		}
 	};
 	
 	/**
-	 * µµ¾î °¹¼ö 
+	 * ë„ì–´ ê°¯ìˆ˜ 
 	 */
 	public static final HashMap<String, String> DOOR_ELE = new HashMap<String, String>()
 	{
 		{
-			put("D2", "2 °³");
-			put("D3", "3 °³");
-			put("D4", "4 °³");
-			put("D5", "5 °³");
+			put("D2", "2 ê°œ");
+			put("D3", "3 ê°œ");
+			put("D4", "4 ê°œ");
+			put("D5", "5 ê°œ");
 		}
 	};
 	
-	
 	/**
-	 * °ú±Ş¹æ½Ä
+	 * ê³¼ê¸‰ë°©ì‹
 	 */
 	public static final HashMap<String, String> INHALATION_TYPE_ELE = new HashMap<String, String>()
 	{
 		{
-			put("IT1", "ÀÚ¿¬Èí±â");
-			put("IT2", "ÅÍº¸");
-			put("IT3", "Æ®À©ÅÍº¸");
-			put("IT4", "Æ®¸®ºíÅÍº¸");
+			put("IT1", "ìì—°í¡ê¸°");
+			put("IT2", "í„°ë³´");
+			put("IT3", "íŠ¸ìœˆí„°ë³´");
+			put("IT4", "íŠ¸ë¦¬ë¸”í„°ë³´");
 		}
 	};
 
 	/**
-	 * ¹ÙÄû ±¼¸² Á¾·ù
+	 * ë°”í€´ êµ´ë¦¼ ì¢…ë¥˜
 	 */
 	public static final HashMap<String, String> DRIVEN_SYSTEM_ELE = new HashMap<String, String>()
 	{
 		{
-			put("DS1", "Àü·û");
-			put("DS2", "ÈÄ·û");
-			put("DS3", "»ó½Ã4·û(AWD)");
-			put("DS4", "ÆÄÆ®Å¸ÀÓ4·û(4WD)");
+			put("DS1", "ì „ë¥œ");
+			put("DS2", "í›„ë¥œ");
+			put("DS3", "ìƒì‹œ4ë¥œ(AWD)");
+			put("DS4", "íŒŒíŠ¸íƒ€ì„4ë¥œ(4WD)");
 		}
 	};
 
 	/**
-	 * ½ÅÂ÷ Áß°íÂ÷ 
+	 * ì‹ ì°¨ ì¤‘ê³ ì°¨ 
 	 */
 	public static final HashMap<String, String> NEW_CAR_ELE = new HashMap<String, String>()
 	{
 		{
-			put("NC1", "½ÅÂ÷");
-			put("NC2", "Áß°íÂ÷");
-			put("NC3", "½ÅÂ÷/Áß°íÂ÷");
+			put("NC1", "ì‹ ì°¨");
+			put("NC2", "ì¤‘ê³ ì°¨");
+			put("NC3", "ì‹ ì°¨/ì¤‘ê³ ì°¨");
 		}
-	};
-	
-	
-	
-	
+	};	
 }

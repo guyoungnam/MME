@@ -8,8 +8,8 @@ import com.dto.UserDTO;
 
 public class UserDAO {
 	
-	public int userAdd(SqlSession session, UserDTO mDTO) {
-		int n = session.insert("UserMapper.UserAdd", mDTO);
+	public int userAdd(SqlSession session, UserDTO uDTO) {
+		int n = session.insert("UserMapper.userAdd", uDTO);
 		return n;
 	}
 
@@ -29,15 +29,8 @@ public class UserDAO {
 		return dto;
 	}
 
-	public UserDTO mypage(SqlSession session, String user_id) {
-		UserDTO dto =
-				session.selectOne("UserMapper.mypage", user_id);
-		return dto;
-	}
-
-	public int userUpdate(SqlSession session, UserDTO mDTO) {
-		int n = session.insert("UserMapper.UserUpdate", mDTO);
-
+	public int mypage(SqlSession session, UserDTO uDTO) {
+		int n =session.insert("UserMapper.mypage", uDTO);
 		return n;
 	}
 

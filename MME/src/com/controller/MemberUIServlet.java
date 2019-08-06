@@ -36,7 +36,7 @@ public class MemberUIServlet extends HttpServlet {
 		request.setAttribute("product_info", OtherELE.getJson(CarELE.NEW_CAR_ELE));
 		
 		
-		RequestDispatcher dis = request.getRequestDispatcher("mainpage/memberAdd.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("mainpage/login.jsp");
 		dis.forward(request, response);
 	}
 

@@ -12,6 +12,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	   <typeAlias type="com.dto.UserDTO" alias="UserDTO"/>
 	   <typeAlias type="com.dto.CarDTO" alias="CarDTO"/>
 	   <typeAlias type="com.dto.SellerDTO" alias="SellerDTO"/>
+	   <typeAlias type="com.dto.BoardDTO" alias="BoardDTO"/>
 
 	</typeAliases>
 	
@@ -29,6 +30,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<mapper resource="com/config/UserMapper.xml" />
 		<mapper resource="com/config/SellerMapper.xml" />
+		<mapper resource="com/config/BoardMapper.xml" />
 
 	</mappers>
 </configuration>

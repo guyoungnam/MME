@@ -56,12 +56,23 @@
 					alert("입력 하신 로그인 정보가 올바른지 확인 바랍니다.");
 					$("#user_id").focus();
 					
+					
+ 				
 				}
 			});
 		});
 	});
+	
+	
+	function IdCheck(){
+		location.href="IdSearchUI";
+		
+	}
 
-</script>
+	
+	</script>
+
+
 
 </head>
 <body>
@@ -92,7 +103,8 @@
 		<td><input type="password" name="user_pw" id="user_pw" /></td>
 	</tr>
 	<tr>
-		<td colspan="2"><button id="userCheck">로그인</button></td>
+		<td colspan="2"><button id="userCheck">로그인</button>&nbsp;&nbsp;
+		<input type="button" value="아이디/비번찾기" onclick="IdCheck()"></td>
 	</tr>
 </table>
 </body>

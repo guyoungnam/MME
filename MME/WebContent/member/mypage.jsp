@@ -18,6 +18,7 @@
 </style>
 
 <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="js/YeoUtil.js"></script>
 
 <script type="text/javascript">
 
@@ -248,11 +249,11 @@ $(document).ready(function(){
         	sendCheck = false;
        	}
         
-//         if(!sellerAjaxCheck)
-//        	{
-//         	alert("사업자 번호 중복 체크를 해 주세요!");
-//         	sendCheck = false;
-//        	}
+         if(!sellerAjaxCheck)
+        	{
+        	alert("사업자 번호 중복 체크를 해 주세요!");
+        	sendCheck = false;
+      	}
         
 
 	}
@@ -397,6 +398,8 @@ $(document).ready(function(){
 		<td style="text-align:right;width:180px;"></td>
 		<td>
 			<input type="submit" value="수정하기" />&nbsp;&nbsp;<input type="button" onclick="user_reset()" value="취소" />
+			&nbsp;&nbsp;<input type="button" value="회원탈퇴"/>
+			
 		</td>
 	</tr>
 	

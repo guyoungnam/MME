@@ -1,6 +1,8 @@
 package com.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,33 +12,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
+import com.dto.BoardDTO;
 import com.itf.CarELE;
 import com.itf.OtherELE;
+import com.service.BoardService;
 
-@WebServlet("/MemberUI")
-public class MemberUIServlet extends HttpServlet {
+@WebServlet("/BoardUI")
+public class BoardUIServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		request.setAttribute("title", "회원가입");
+		String searchName = request.getParameter("searchName");
+		String searchValue = request.getParameter("searchValue");
 		
-		/**
-		 * 현재 거주 지역
-		 */
-		request.setAttribute("area_info", OtherELE.getJson(OtherELE.AREA_ELE));
-		/**
-		 * 자동차 선호 브랜드
-		 */
-		request.setAttribute("brand_info", OtherELE.getJson(CarELE.BRAND_ELE));
+		HashMap<String,String> map =
+				new HashMap<String, String>();
+		map.put("searchName" , searchName);
+		map.put("searchValue" , searchValue);
 		
-		/**
-		 * 견적 가능 차량 종류
-		 */
-		request.setAttribute("product_info", OtherELE.getJson(CarELE.NEW_CAR_ELE));
+		BoardService service = new BoardService();
+		List<BoardDTO> list= service.listAll(map);
 		
+		request.setAttribute("list", list);
 		
-		RequestDispatcher dis = request.getRequestDispatcher("mainpage/memberAdd.jsp");
+		RequestDispatcher dis =
+				request.getRequestDispatcher("mainpage/board.jsp");
 		dis.forward(request, response);
 	}
 

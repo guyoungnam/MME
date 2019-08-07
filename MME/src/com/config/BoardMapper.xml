@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BoardMapper">
+
+	<select id="listAll" resultType="BoardDTO">
+		select num, title, user_ailas, content, writeday, readCnt
+		from board
+ 
+<!-- 		<if test="searchName=='title'"> -->
+<!-- 		  where title LIKE '%'||#{searchValue}||'%'</if> -->
+<!-- 		<if test="searchName== 'user_ailas'">  -->
+<!-- 		where author LIKE '%'||#{searchValue}||'%' </if> -->
+<!-- 		order by num desc -->
+ 
+	</select>
+
+
+	        
+
+
+
+
+</mapper>

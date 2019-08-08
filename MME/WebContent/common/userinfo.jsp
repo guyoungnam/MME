@@ -14,7 +14,6 @@
  		<tr>
  			<td><a href="LoginUI">로그인</a></td>
  			<td><a href="MemberUI">회원가입</a> </td>
- 			<td><a href="BoardUI">게시판</a></td>
  			<td><span style="font-size:30px;">&nbsp;${title}</span></td>
 
  		</tr>
@@ -26,9 +25,8 @@
  	<table class="userinfo">
  		<tr>
  			<td> </td>
- 			<td><a href="LogoutUI">로그아웃</a> </td>
- 			<td><a href="MyPageUI">마이페이지</a></td>
  			<td><span style="font-size:30px;">${uDTO.user_name}</span>회원님</td>
+ 			<td><a href="LogoutUI">로그아웃</a> </td>
  		</tr>
  	</table>
  	

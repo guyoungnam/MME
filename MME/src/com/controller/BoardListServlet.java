@@ -10,18 +10,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.dto.BoardDTO;
-import com.itf.CarELE;
-import com.itf.OtherELE;
 import com.service.BoardService;
 
-@WebServlet("/BoardUI")
-public class BoardUIServlet extends HttpServlet {
+/**
+ * Servlet implementation class BoardListServlet
+ */
+@WebServlet("/BoardList")
+public class BoardListServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		String searchName = request.getParameter("searchName");
 		String searchValue = request.getParameter("searchValue");
 		
@@ -29,6 +30,7 @@ public class BoardUIServlet extends HttpServlet {
 				new HashMap<String, String>();
 		map.put("searchName" , searchName);
 		map.put("searchValue" , searchValue);
+		
 		
 		BoardService service = new BoardService();
 		List<BoardDTO> list= service.listAll(map);
@@ -41,6 +43,7 @@ public class BoardUIServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

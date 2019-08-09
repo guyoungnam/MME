@@ -15,7 +15,7 @@
 <table border="1">
 	<tr>
 	 <td colspan="5">
-	  <form action="BoardListServlet">
+	  <form action="BoardList">
 	 검색
 	   <select name="searchName">
 	    <option value="title">제목</option>
@@ -42,9 +42,31 @@
 	  <th>${dto.readCnt }</th>
 	</tr>
 </c:forEach>
-
-
 </table>
+
+<br>
+    <div id="pageForm">
+        <c:if test="${startPage != 1}">
+            <a href='BoardList?page=${startPage-1}'>[ 이전 ]</a>
+        </c:if>
+        
+        <c:forEach var="pageNum" begin="${startPage}" end="${endPage}">
+            <c:if test="${pageNum == spage}">
+                ${pageNum}&nbsp;
+            </c:if>
+            <c:if test="${pageNum != spage}">
+                <a href='BoardList?page=${pageNum}'>${pageNum}&nbsp;</a>
+            </c:if>
+        </c:forEach>
+        
+        <c:if test="${endPage != maxPage }">
+            <a href='BoardList?page=${endPage+1 }'>[다음]</a>
+        </c:if>
+    </div>
+
+
 <a href="<c:url value='/BoardWriteUI'/>">글쓰기</a>
+
+
 </body>
 </html>

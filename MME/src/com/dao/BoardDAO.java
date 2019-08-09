@@ -61,7 +61,9 @@ public class BoardDAO {
 		DTO.setTotalCount(totalCount(session));
 		return DTO;
 
-		
-		return null;
+	}
+
+	private int totalCount(SqlSession session) {
+		return session.selectOne("totalCount");
 	}
 }

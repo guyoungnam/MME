@@ -15,6 +15,7 @@ import com.dto.BoardDTO;
 import com.dto.PageDTO;
 import com.service.BoardService;
 
+
 /**
  * Servlet implementation class BoardListServlet
  */
@@ -24,28 +25,31 @@ public class BoardUIListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		String boardUI = request.getParameter("boardUI");
+		
+		System.out.println("나오나boardUI>>>>"+boardUI);
+		
+		if(boardUI.equals("boardList"))
+		{
 		String curPage = request.getParameter("curPage");
-		if(curPage == null) {
-			curPage = "1";
-		}
+		if(curPage == null) curPage="1";
 		
 		BoardService service = new BoardService();
 		PageDTO DTO = service.selectAllPageBoard(Integer.parseInt(curPage));
 		
-		List<BoardDTO> list = DTO.getList();
-		int perPage = DTO.getPerPage();
-		int totalCount = DTO.getTotalCount();
-		int totalPage = totalCount/perPage;
-		if(totalCount%perPage != 0) totalPage++;
+		request.setAttribute("DTO", DTO);
 		
-		request.setAttribute("list", list);
-		
-		System.out.println("totalCount > " + totalCount);
-		System.out.println("totalPage > " + totalPage);
 		
 		RequestDispatcher dis = request.getRequestDispatcher("mainpage/board.jsp");
-		dis.forward(request, response);			
-
+		dis.forward(request, response);	
+		
+		}
+		else {
+			
+			RequestDispatcher dis = request.getRequestDispatcher("mainpage/board.jsp");
+			dis.forward(request, response);	
+		}
+				
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

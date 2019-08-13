@@ -45,24 +45,18 @@
 </table>
 
 <br>
-    <div id="pageForm">
-        <c:if test="${startPage != 1}">
-            <a href='BoardList?page=${startPage-1}'>[ 이전 ]</a>
-        </c:if>
+ <c:url var="action" value="BoardUIList?boardUI=boardList"/>
+<%--  <c:if test="${DTO.curPage > DTO.pageGroupSize }"> --%>
+ <a href="${action}curPage=${DTO.prev}">[이전]</a>
+<%-- </c:if>  --%>
         
-        <c:forEach var="pageNum" begin="${startPage}" end="${endPage}">
-            <c:if test="${pageNum == spage}">
-                ${pageNum}&nbsp;
-            </c:if>
-            <c:if test="${pageNum != spage}">
-                <a href='BoardList?page=${pageNum}'>${pageNum}&nbsp;</a>
-            </c:if>
+        <c:forEach begin="${DTO.startPage}" end="${DTO.endPage}" varStatus="status" step="1" var="index">
+          <a href="${action}curPage=${index}">[${index}]</a>
         </c:forEach>
         
-        <c:if test="${endPage != maxPage }">
-            <a href='BoardList?page=${endPage+1 }'>[다음]</a>
+        <c:if test="${DTO.next< DTO.totalPage}">
+            <a href="${action}curPage=${DTO.next}">[다음]</a>
         </c:if>
-    </div>
 
 
 <a href="<c:url value='/BoardWriteUI'/>">글쓰기</a>

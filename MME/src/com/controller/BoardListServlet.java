@@ -35,6 +35,8 @@ public class BoardListServlet extends HttpServlet {
 		BoardService service = new BoardService();
 		List<BoardDTO> list= service.listAll(map);
 		
+		request.setAttribute("list", list);
+		
 		
 		RequestDispatcher dis =
 				request.getRequestDispatcher("mainpage/board.jsp");

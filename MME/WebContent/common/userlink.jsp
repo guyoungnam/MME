@@ -6,6 +6,6 @@
 		<td><a href="">알람</a></td>
 		<td><a href="MyPageUI">마이페이지</a></td>
 		<td><a href="">견적요청</a></td>
-		<td><a href="BoardList">커뮤니티</a></td>
+		<td><a href=BoardList>커뮤니티</a></td>
 	</tr>
 </table>

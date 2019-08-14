@@ -44,7 +44,23 @@
 </c:forEach>
 </table>
 
+<<<<<<< HEAD
 <c:url var="action" value="BoardUIList?boardUI=boardList&"/>
+=======
+<br>
+ <c:url var="action" value="BoardUIList?boardUI=boardList"/>
+<%--  <c:if test="${DTO.curPage > DTO.pageGroupSize }"> --%>
+ <a href="${action}curPage=${DTO.prev}">[이전]</a>
+<%-- </c:if>  --%>
+        
+        <c:forEach begin="${DTO.startPage}" end="${DTO.endPage}" varStatus="status" step="1" var="index">
+          <a href="${action}curPage=${index}">[${index}]</a>
+        </c:forEach>
+        
+        <c:if test="${DTO.next< DTO.totalPage}">
+            <a href="${action}curPage=${DTO.next}">[다음]</a>
+        </c:if>
+>>>>>>> branch 'master' of https://github.com/guyoungnam/MME.git
 
 <c:if test="${curPage > pageGroupSize}">
 	<a href="BoardUIList?=${prev}">[이전]</a>

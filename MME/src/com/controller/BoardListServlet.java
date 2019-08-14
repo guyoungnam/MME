@@ -39,6 +39,8 @@ public class BoardListServlet extends HttpServlet {
 		
 		request.setAttribute("list",list);
 		
+		request.setAttribute("list", list);
+		
 		
 		RequestDispatcher dis =
 				request.getRequestDispatcher("mainpage/board.jsp");

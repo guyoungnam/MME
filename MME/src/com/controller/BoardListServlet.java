@@ -23,17 +23,21 @@ public class BoardListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String searchName = request.getParameter("searchName");
-		String searchValue = request.getParameter("searchValue");
+//		String searchName = request.getParameter("searchName");
+//		String searchValue = request.getParameter("searchValue");
+//		String curPage = request.getParameter("curPage");
 		
-		HashMap<String,String> map =
-				new HashMap<String, String>();
-		map.put("searchName" , searchName);
-		map.put("searchValue" , searchValue);
-		
+//		HashMap<String,String> map =
+//				new HashMap<String, String>();
+//		map.put("searchName" , searchName);
+//		map.put("searchValue" , searchValue);
+//		map.put("curPage" , curPage);
+//		
 		
 		BoardService service = new BoardService();
-		List<BoardDTO> list= service.listAll(map);
+		List<BoardDTO> list= service.listAll();
+		
+		request.setAttribute("list",list);
 		
 		
 		RequestDispatcher dis =

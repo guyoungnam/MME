@@ -11,9 +11,9 @@ import com.dto.PageDTO;
 
 public class BoardDAO {
 
-	public List<BoardDTO> listAll(SqlSession session, HashMap<String, String> map) {
+	public List<BoardDTO> listAll(SqlSession session) {
 		List<BoardDTO> list =
-				session.selectList("BoardMapper.listAll",map);
+				session.selectList("BoardMapper.listAll");
 		return list;
 	}
 

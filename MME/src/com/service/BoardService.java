@@ -12,13 +12,13 @@ import com.dto.PageDTO;
 
 public class BoardService {
 
-	public List<BoardDTO> listAll(HashMap<String, String> map) {
+	public List<BoardDTO> listAll() {
 		
 		SqlSession session =MySqlSessionFactory.getSession();
 		List<BoardDTO> list = null;
 		BoardDAO dao = new BoardDAO();
 		try {
-			list = dao.listAll(session,map);
+			list = dao.listAll(session);
 		}finally {
 			session.close();
 		}

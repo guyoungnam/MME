@@ -39,9 +39,7 @@ public class BoardUIListServlet extends HttpServlet {
 		if(totalCount%perPage != 0) totalPage++;
 		
 		request.setAttribute("list", list);
-		
-		System.out.println("totalCount > " + totalCount);
-		System.out.println("totalPage > " + totalPage);
+	
 		
 		RequestDispatcher dis = request.getRequestDispatcher("mainpage/board.jsp");
 		dis.forward(request, response);			
